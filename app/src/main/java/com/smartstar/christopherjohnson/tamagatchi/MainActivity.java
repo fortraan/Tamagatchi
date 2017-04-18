@@ -1,6 +1,7 @@
 package com.smartstar.christopherjohnson.tamagatchi;
 
 import android.animation.Animator;
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.media.MediaPlayer;
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     // TODO: Music (?)
 
     private static final String DEBUG_TAG = "Pocket Pet";
+
+    String petName = "Eevee";
 
     ProgressBar hungerBar;
     ProgressBar healthBar;
@@ -221,6 +224,7 @@ public class MainActivity extends AppCompatActivity {
         exitLoop = true;
     }
 
+    @SuppressLint("SetTextI18n")
     private void goToHospital() {
         loopHandler.removeCallbacks(hungerLoop);
         loopHandler.removeCallbacks(healthLoop);
@@ -231,6 +235,8 @@ public class MainActivity extends AppCompatActivity {
 
         TextView header = (TextView) findViewById(R.id.hospitalHeading);
         TextView body = (TextView) findViewById(R.id.hospitalBody);
+
+        header.setText(petName + " collapsed!");
 
         header.setAlpha(0);
         header.animate().alpha(1).setDuration(700).setListener(null);
