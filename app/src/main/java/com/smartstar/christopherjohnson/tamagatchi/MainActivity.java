@@ -244,7 +244,7 @@ public class MainActivity extends AppCompatActivity {
         body.setAlpha(0);
         body.animate().alpha(1).setDuration(700).setListener(null);
 
-        //final MediaPlayer mp = MediaPlayer.create(this, R.raw);
-        //mp.start();
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.flatline);
+        mp.start();
     }
 }
