@@ -104,4 +104,15 @@
         android:scaleX="1.6"
         android:scaleY="1.6" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/sleep"
+        android:id="@+id/sleep"
+        android:layout_marginBottom="34dp"
+        android:scaleX="3"
+        android:scaleY="3"
+        android:layout_alignBottom="@+id/eevee"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

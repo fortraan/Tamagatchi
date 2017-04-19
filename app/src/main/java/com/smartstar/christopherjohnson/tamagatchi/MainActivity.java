@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     ProgressBar affectionBar;
 
     GifImageView eeveeView;
+    ImageView sleepView;
 
     Button food;
     Button menu;
@@ -112,6 +114,11 @@ public class MainActivity extends AppCompatActivity {
             }
             healthBar.setProgress((int) health);
 
+            if (health <= 0) {
+                goToHospital();
+                return;
+            }
+
             if (!exitLoop) {
                 loopHandler.postDelayed(healthLoop, healthLoopTime);
             }
@@ -170,6 +177,9 @@ public class MainActivity extends AppCompatActivity {
 
         eeveeView = (GifImageView) findViewById(R.id.eevee);
         eeveeView.setOnTouchListener(this.rubListener);
+
+        sleepView = (ImageView) findViewById(R.id.sleep);
+        sleepView.setVisibility(View.INVISIBLE);
 
         food = (Button) findViewById(R.id.food);
         menu = (Button) findViewById(R.id.menu);
